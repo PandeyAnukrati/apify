@@ -187,19 +187,20 @@ graph TD
 ![Homepage](screenshots/image.png)
 
 #### Actor List Page
-![Actor List](screenshots/image(1).png)
+![Actor List](screenshots/image%20%281%29.png)
 
 #### Actor Details
-![Actor Details](screenshots/image(2).png)
+![Actor Details](screenshots/image%20%282%29.png)
 
 #### Dynamic Form Generation
-![Dynamic Form](screenshots/image(3).png)
+![Dynamic Form](screenshots/image%20%283%29.png)
 
 #### Execution Progress
-![Execution Progress](screenshots/image(4).png)
+![Execution Progress](screenshots/image%20%284%29.png)
 
 #### Results View
-![Results View](screenshots/image(5).png)
+![Results View](screenshots/image%20%285%29.png)
+
 
 
 ## 📱 Usage Guide
