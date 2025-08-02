@@ -179,6 +179,29 @@ graph TD
 - **Run History**: Access to previous executions
 - **Performance Metrics**: Execution time and resource usage
 
+## 📸 Screenshots
+
+### Application Interface
+
+#### Homepage
+![Homepage](screenshots/image.png)
+
+#### Actor List Page
+![Actor List](screenshots/image (1).png)
+
+#### Actor Details
+![Actor Details](screenshots/image (2).png)
+
+#### Dynamic Form Generation
+![Dynamic Form](screenshots/image (3).png)
+
+#### Execution Progress
+![Execution Progress](screenshots/image (4).png)
+
+#### Results View
+![Results View](screenshots/image (5).png)
+
+
 ## 📱 Usage Guide
 
 ### Getting Started
