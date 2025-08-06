@@ -179,6 +179,30 @@ graph TD
 - **Run History**: Access to previous executions
 - **Performance Metrics**: Execution time and resource usage
 
+## 📸 Screenshots
+
+### Application Interface
+
+#### Homepage
+![Homepage](screenshots/image.png)
+
+#### Actor List Page
+![Actor List](screenshots/image%20%281%29.png)
+
+#### Actor Details
+![Actor Details](screenshots/image%20%282%29.png)
+
+#### Dynamic Form Generation
+![Dynamic Form](screenshots/image%20%283%29.png)
+
+#### Execution Progress
+![Execution Progress](screenshots/image%20%284%29.png)
+
+#### Results View
+![Results View](screenshots/image%20%285%29.png)
+
+
+
 ## 📱 Usage Guide
 
 ### Getting Started
@@ -424,17 +448,9 @@ For production deployment:
    - Configure Express to serve built React files
    - Set up proper routing for SPA
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
 
-## 📄 License
 
-MIT License - see LICENSE file for details
 
 ## 🆘 Troubleshooting
 
@@ -511,16 +527,9 @@ MIT License - see LICENSE file for details
 - 🤖 **AI Integration**: Smart configuration suggestions
 - 📈 **Data Visualization**: Charts and graphs for scraped data
 
-### Technical Improvements
-
-- 🔐 **Enhanced Security**: OAuth integration and advanced authentication
-- 🚀 **Performance**: Server-side rendering and caching improvements
-- 🧪 **Testing**: Comprehensive test suite with CI/CD
-- 📦 **Docker**: Containerization for easy deployment
-- ☁️ **Cloud Deployment**: One-click cloud deployment options
 
 ---
 
 Built with ❤️ using React, Node.js, Tailwind CSS, and the Apify platform.
 
-**Happy Scraping! 🕷️**
+
