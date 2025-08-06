@@ -57,7 +57,12 @@ export class ApifyController {
     try {
       const { apikey } = req.headers;
       const { actorId } = req.params;
-      const { input } = req.body;
+      let { input } = req.body;
+      // Always send a default url if input.url is missing or empty
+      if (!input || typeof input !== 'object') input = {};
+      if (!input.url || input.url === "") {
+        input.url = "https://example.com";
+      }
 
       if (!apikey) {
         return res.status(400).json({

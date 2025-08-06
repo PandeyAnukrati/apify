@@ -154,11 +154,20 @@ export class ApifyService {
             required: ["startUrls", "pageFunction"],
           };
         } else {
+          // Fallback: provide a generic 'url' field for actors that may require it
           inputSchema = {
-            title: "Actor Input",
+            title: "Default Input",
             type: "object",
-            description: "No input schema available for this actor",
-            properties: {},
+            description: "Fallback input schema for actors with optional fields",
+            properties: {
+              url: {
+                title: "URL",
+                type: "string",
+                description: "URL to process (optional)",
+                example: "https://example.com"
+              }
+            }
+            // No 'required' field, so all fields are optional
           };
         }
       }
