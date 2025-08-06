@@ -32,7 +32,7 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === "production"
-        ? ["https://your-production-domain.com"]
+        ? ["https://apify-pk50.onrender.com"]
         : ["http://localhost:5173", "http://localhost:3000"],
     credentials: true,
   })
