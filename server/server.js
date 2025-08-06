@@ -32,8 +32,8 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === "production"
-        ? ["https://apify-pk50.onrender.com"]
-        : ["http://localhost:5173", "http://localhost:3000"],
+        ? ["https://apify-pk50.onrender.com", "https://apify1.netlify.app"]
+        : ["http://localhost:5173", "http://localhost:3000", "https://apify1.netlify.app"],
     credentials: true,
   })
 );
