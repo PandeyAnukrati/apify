@@ -13,7 +13,8 @@ const ActorDetail = () => {
   const { apiKey, isAuthenticated } = useApiKey();
   const [actor, setActor] = useState(null);
   const [schema, setSchema] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); // for actor
+  const [schemaLoading, setSchemaLoading] = useState(false); // for schema
   const [error, setError] = useState("");
   const [isRunning, setIsRunning] = useState(false);
   const navigate = useNavigate();
@@ -23,21 +24,28 @@ const ActorDetail = () => {
       navigate("/");
       return;
     }
-
-    fetchActorDetails();
+    fetchActorAndSchema();
   }, [actorId, isAuthenticated, navigate]);
 
-  const fetchActorDetails = async () => {
+  const fetchActorAndSchema = async () => {
     try {
       setLoading(true);
       setError("");
+      setSchema(null);
+      setSchemaLoading(false);
 
       apiService.setApiKey(apiKey);
+      // Fetch actor details first (without schema)
       const response = await apiService.getActorSchema(actorId);
 
       if (response.success) {
         setActor(response.data.actor);
-        setSchema(response.data.inputSchema);
+        // Now start schema loading with delay
+        setSchemaLoading(true);
+        setTimeout(() => {
+          setSchema(response.data.inputSchema);
+          setSchemaLoading(false);
+        }, 5000);
       } else {
         setError("Failed to fetch actor details");
       }
@@ -163,7 +171,12 @@ const ActorDetail = () => {
             </h2>
           </div>
 
-          {schema ? (
+          {schemaLoading ? (
+            <div className="flex justify-center items-center min-h-[120px]">
+              <LoadingSpinner size="md" />
+              <span className="ml-3 text-gray-500">Loading schema...</span>
+            </div>
+          ) : schema ? (
             <div className="space-y-6">
               <div>
                 <h3 className="font-medium text-gray-900 mb-3 text-lg">
@@ -234,13 +247,20 @@ const ActorDetail = () => {
             <h2 className="text-xl font-semibold text-gray-900">Run Actor</h2>
           </div>
 
-          <DynamicForm
-            key={`${actorId}-${JSON.stringify(schema)}`}
-            schema={schema}
-            onSubmit={handleRunActor}
-            isSubmitting={isRunning}
-            submitButtonText={isRunning ? "Starting Actor..." : "Run Actor"}
-          />
+          {schemaLoading ? (
+            <div className="flex justify-center items-center min-h-[120px]">
+              <LoadingSpinner size="md" />
+              <span className="ml-3 text-gray-500">Loading schema...</span>
+            </div>
+          ) : (
+            <DynamicForm
+              key={`${actorId}-${JSON.stringify(schema)}`}
+              schema={schema}
+              onSubmit={handleRunActor}
+              isSubmitting={isRunning}
+              submitButtonText={isRunning ? "Starting Actor..." : "Run Actor"}
+            />
+          )}
         </div>
       </div>
     </div>

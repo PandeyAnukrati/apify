@@ -10,7 +10,7 @@ export class ApifyService {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
-      timeout: 30000,
+      timeout: 60000, // Increased timeout to 60 seconds
     });
   }
 
